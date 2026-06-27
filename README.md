@@ -25,3 +25,8 @@ schedule:
 bundle install
 bundle exec jekyll serve
 ```
+
+## Logo sources
+
+- `assets/img/crest-logo.png`: CREST official logo from `crest.science/wp-content/uploads/2020/06/Logo-Crest-color.png`.
+- `assets/img/ensae-logo.png`: ENSAE Paris official logo from `ensae.fr/sites/default/files/Groupe%2012.png`.
