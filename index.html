@@ -66,7 +66,10 @@ layout: null
         </section>
 
         <section class="section" id="schedule">
-          <h2>Schedule</h2>
+          <div class="section-head">
+            <h2>Schedule</h2>
+            <p>The program will be published here as sessions are confirmed.</p>
+          </div>
           {% for block in seminar.schedule %}
             <h3>{{ block.year }}</h3>
             {% if block.sessions and block.sessions.size > 0 %}
@@ -102,13 +105,20 @@ layout: null
                 </table>
               </div>
             {% else %}
-              <p class="empty">The schedule will appear here as soon as sessions are confirmed.</p>
+              <div class="empty-state">
+                <strong>Program in preparation</strong>
+                <p>Titles, speakers, rooms, and abstracts will be added as talks are confirmed.</p>
+                <a href="#organizers">Contact the organizers</a>
+              </div>
             {% endif %}
           {% endfor %}
         </section>
 
         <section class="section" id="format">
-          <h2>Format</h2>
+          <div class="section-head">
+            <h2>Format</h2>
+            <p>A flexible seminar for sharing research early, rehearsing talks, and discussing useful papers or methods.</p>
+          </div>
           <ul class="grid-list">
             {% for item in seminar.format %}
               <li class="item">
@@ -120,7 +130,9 @@ layout: null
         </section>
 
         <section class="section" id="practical">
-          <h2>Practical info</h2>
+          <div class="section-head">
+            <h2>Practical info</h2>
+          </div>
           <ul class="grid-list">
             {% for item in seminar.practical %}
               <li class="item">
@@ -132,8 +144,11 @@ layout: null
         </section>
 
         <section class="section" id="organizers">
-          <h2>Organizers</h2>
-          <ul class="grid-list">
+          <div class="section-head">
+            <h2>Organizers</h2>
+            <p>The seminar is coordinated by PhD students at CREST-ENSAE.</p>
+          </div>
+          <ul class="grid-list organizer-list">
             {% for person in seminar.organizers %}
               <li class="person">
                 <strong>
@@ -143,12 +158,10 @@ layout: null
                     {{ person.name }}
                   {% endif %}
                 </strong>
-                <p>
-                  {{ person.affiliation }}
-                  {% if person.email %}
-                    · <a href="mailto:{{ person.email }}">{{ person.email }}</a>
-                  {% endif %}
-                </p>
+                <p>{{ person.affiliation }}</p>
+                {% if person.email %}
+                  <a class="person-email" href="mailto:{{ person.email }}">{{ person.email }}</a>
+                {% endif %}
               </li>
             {% endfor %}
           </ul>

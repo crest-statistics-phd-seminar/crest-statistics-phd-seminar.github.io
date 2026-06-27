@@ -8,7 +8,7 @@
   --accent: #8d2839;
   --accent-strong: #6f1f2d;
   --teal: #0f766e;
-  --shadow: 0 18px 45px rgba(32, 36, 44, 0.08);
+  --shadow: 0 14px 36px rgba(32, 36, 44, 0.06);
 }
 
 * {
@@ -172,7 +172,7 @@ a:hover {
   border-left: 4px solid var(--accent);
   border-radius: 8px;
   box-shadow: var(--shadow);
-  margin: 1.55rem 0 1.6rem;
+  margin: 1.45rem 0 1.45rem;
   padding: 1rem 1.1rem;
 }
 
@@ -189,7 +189,7 @@ a:hover {
 .facts {
   display: grid;
   gap: 0.8rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 1.6rem 0 2.2rem;
 }
 
@@ -220,15 +220,25 @@ a:hover {
 
 .section {
   border-top: 1px solid var(--line);
-  margin-top: 1.9rem;
-  padding-top: 1.65rem;
+  margin-top: 2rem;
+  padding-top: 1.7rem;
   scroll-margin-top: 1.2rem;
 }
 
 .section h2 {
   font-size: 1.55rem;
   line-height: 1.25;
-  margin: 0 0 0.9rem;
+  margin: 0;
+}
+
+.section-head {
+  margin-bottom: 1rem;
+}
+
+.section-head p {
+  color: var(--muted);
+  margin: 0.35rem 0 0;
+  max-width: 44rem;
 }
 
 .section h3 {
@@ -239,6 +249,7 @@ a:hover {
 .grid-list {
   display: grid;
   gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
@@ -248,6 +259,24 @@ a:hover {
 .person p {
   color: var(--muted);
   margin: 0.2rem 0 0;
+}
+
+.organizer-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  min-height: 8.1rem;
+}
+
+.person-email {
+  display: block;
+  font-size: 0.92rem;
+  margin-top: auto;
+  overflow-wrap: anywhere;
+  padding-top: 0.85rem;
 }
 
 .table-wrap {
@@ -289,6 +318,27 @@ td span {
 .empty {
   color: var(--muted);
   margin: 0.55rem 0 0;
+}
+
+.empty-state {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+
+.empty-state strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.empty-state p {
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.empty-state a {
+  font-weight: 650;
 }
 
 .footer {
@@ -349,5 +399,20 @@ td span {
 
   .facts {
     grid-template-columns: 1fr;
+  }
+
+  .organizer-list {
+    grid-template-columns: 1fr;
+  }
+
+  .person {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1050px) {
+  .facts,
+  .organizer-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
