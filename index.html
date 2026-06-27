@@ -140,8 +140,19 @@ layout: null
           <ul class="grid-list">
             {% for person in seminar.organizers %}
               <li class="person">
-                <strong>{{ person.name }}</strong>
-                <p>{{ person.affiliation }} · <a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+                <strong>
+                  {% if person.url %}
+                    <a href="{{ person.url }}">{{ person.name }}</a>
+                  {% else %}
+                    {{ person.name }}
+                  {% endif %}
+                </strong>
+                <p>
+                  {{ person.affiliation }}
+                  {% if person.email %}
+                    · <a href="mailto:{{ person.email }}">{{ person.email }}</a>
+                  {% endif %}
+                </p>
               </li>
             {% endfor %}
           </ul>
