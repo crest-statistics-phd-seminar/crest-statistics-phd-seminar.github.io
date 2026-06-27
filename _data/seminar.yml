@@ -1,0 +1,41 @@
+meta:
+  title: CREST Statistics PhD Seminar
+  subtitle: A regular seminar for PhD students in statistics to present work in progress, prepare talks, and exchange feedback.
+  academic_year: 2026-2027
+  status: Program in preparation
+  location: CREST, ENSAE Paris
+  format: 45 min talk + 15 min discussion
+  audience: PhD students, postdocs, and researchers in statistics and related fields
+  contact_name: Yassine Boukhateb
+  contact_email: yassine.boukhateb@ensae.fr
+
+organizers:
+  - name: Yassine Boukhateb
+    affiliation: CREST-ENSAE
+    email: yassine.boukhateb@ensae.fr
+
+announcements:
+  - The 2026-2027 program is being prepared.
+  - Titles and abstracts will be added as talks are confirmed.
+
+schedule:
+  - year: 2026-2027
+    sessions: []
+
+format:
+  - title: Work in progress
+    text: Present ongoing research, open questions, or a technical tool you would like to discuss.
+  - title: Conference rehearsal
+    text: Use the seminar as a friendly place to test a conference talk before travelling.
+  - title: Reading session
+    text: Share a paper, method, or problem that could be useful to other PhD students.
+
+practical:
+  - label: Language
+    value: English or French, depending on the speaker and audience.
+  - label: Slides
+    value: Optional. Blackboard talks are welcome.
+  - label: Abstracts
+    value: A short abstract is enough for the announcement.
+  - label: Visitors
+    value: Visitors are welcome when the speaker is comfortable with it.

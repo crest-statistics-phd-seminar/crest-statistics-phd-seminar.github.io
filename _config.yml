@@ -1,0 +1,15 @@
+title: CREST Statistics PhD Seminar
+description: Website for the CREST Statistics PhD Seminar.
+url: "https://crest-statistics-phd-seminar.github.io"
+baseurl: ""
+lang: en
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor/

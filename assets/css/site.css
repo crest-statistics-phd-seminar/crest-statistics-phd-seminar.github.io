@@ -1,0 +1,301 @@
+:root {
+  --bg: #ffffff;
+  --surface: #f8fafc;
+  --surface-strong: #eef2f7;
+  --text: #20242c;
+  --muted: #667085;
+  --line: #d9dee7;
+  --accent: #8d2839;
+  --accent-strong: #6f1f2d;
+  --teal: #0f766e;
+  --shadow: 0 18px 45px rgba(32, 36, 44, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: minmax(210px, 260px) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  align-self: start;
+  border-right: 1px solid var(--line);
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  position: sticky;
+  top: 0;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.brand img {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  height: 44px;
+  width: 44px;
+}
+
+.brand strong {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.brand span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.78rem;
+  margin-top: 0.1rem;
+}
+
+.nav {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.nav a {
+  border-left: 2px solid transparent;
+  color: var(--muted);
+  font-size: 0.94rem;
+  padding: 0.35rem 0 0.35rem 0.75rem;
+}
+
+.nav a:hover {
+  border-left-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 930px;
+  padding: 3.2rem 2.2rem 4rem;
+  width: 100%;
+}
+
+.kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0;
+  margin-bottom: 0.55rem;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(2.05rem, 4vw, 3.3rem);
+  letter-spacing: 0;
+  line-height: 1.08;
+  margin: 0 0 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.08rem;
+  max-width: 46rem;
+  margin: 0;
+}
+
+.notice {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin: 1.55rem 0 1.6rem;
+  padding: 1rem 1.1rem;
+}
+
+.notice strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.notice p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.facts {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1.6rem 0 2.2rem;
+}
+
+.fact,
+.item,
+.person {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+}
+
+.fact span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+
+.fact strong,
+.item strong,
+.person strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.section {
+  border-top: 1px solid var(--line);
+  margin-top: 1.9rem;
+  padding-top: 1.65rem;
+  scroll-margin-top: 1.2rem;
+}
+
+.section h2 {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  margin: 0 0 0.9rem;
+}
+
+.section h3 {
+  font-size: 1.08rem;
+  margin: 1rem 0 0.45rem;
+}
+
+.grid-list {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item p,
+.person p {
+  color: var(--muted);
+  margin: 0.2rem 0 0;
+}
+
+.table-wrap {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 680px;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+td span {
+  color: var(--muted);
+}
+
+.empty {
+  color: var(--muted);
+  margin: 0.55rem 0 0;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+}
+
+@media (max-width: 760px) {
+  .page {
+    display: block;
+  }
+
+  .sidebar {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+    min-height: auto;
+    padding: 1.25rem 1.1rem;
+    position: static;
+  }
+
+  .brand {
+    margin-bottom: 1rem;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.9rem;
+  }
+
+  .nav a {
+    border-left: 0;
+    padding: 0;
+  }
+
+  .content {
+    padding: 2rem 1.1rem 3rem;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+}

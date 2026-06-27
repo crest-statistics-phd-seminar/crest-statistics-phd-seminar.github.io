@@ -1,0 +1,149 @@
+---
+layout: null
+---
+{% assign seminar = site.data.seminar %}
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ seminar.meta.title }}</title>
+    <meta name="description" content="{{ seminar.meta.subtitle }}">
+    <link rel="icon" href="{{ '/assets/img/seminar-mark.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  </head>
+  <body>
+    <div class="page">
+      <aside class="sidebar" aria-label="Site navigation">
+        <a class="brand" href="#overview">
+          <img src="{{ '/assets/img/seminar-mark.svg' | relative_url }}" alt="">
+          <span>
+            <strong>CREST Statistics</strong>
+            <span>PhD Seminar</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a href="#schedule">Schedule</a>
+          <a href="#format">Format</a>
+          <a href="#practical">Practical info</a>
+          <a href="#organizers">Organizers</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section class="hero" id="overview">
+          <div class="kicker">CREST · Statistics</div>
+          <h1>{{ seminar.meta.title }}</h1>
+          <p>{{ seminar.meta.subtitle }}</p>
+
+          <div class="notice">
+            <strong>{{ seminar.meta.academic_year }} · {{ seminar.meta.status }}</strong>
+            <p>{{ seminar.announcements | first }}</p>
+          </div>
+
+          <div class="facts">
+            <div class="fact">
+              <span>Location</span>
+              <strong>{{ seminar.meta.location }}</strong>
+            </div>
+            <div class="fact">
+              <span>Format</span>
+              <strong>{{ seminar.meta.format }}</strong>
+            </div>
+            <div class="fact">
+              <span>Audience</span>
+              <strong>{{ seminar.meta.audience }}</strong>
+            </div>
+            <div class="fact">
+              <span>Contact</span>
+              <strong><a href="mailto:{{ seminar.meta.contact_email }}">{{ seminar.meta.contact_name }}</a></strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="schedule">
+          <h2>Schedule</h2>
+          {% for block in seminar.schedule %}
+            <h3>{{ block.year }}</h3>
+            {% if block.sessions and block.sessions.size > 0 %}
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Speaker</th>
+                      <th>Title</th>
+                      <th>Room</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for session in block.sessions %}
+                      <tr>
+                        <td>{{ session.date }}</td>
+                        <td>{{ session.speaker }}</td>
+                        <td>
+                          {% if session.url %}
+                            <a href="{{ session.url }}">{{ session.title }}</a>
+                          {% else %}
+                            {{ session.title }}
+                          {% endif %}
+                          {% if session.abstract %}
+                            <br><span>{{ session.abstract }}</span>
+                          {% endif %}
+                        </td>
+                        <td>{{ session.room }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            {% else %}
+              <p class="empty">The schedule will appear here as soon as sessions are confirmed.</p>
+            {% endif %}
+          {% endfor %}
+        </section>
+
+        <section class="section" id="format">
+          <h2>Format</h2>
+          <ul class="grid-list">
+            {% for item in seminar.format %}
+              <li class="item">
+                <strong>{{ item.title }}</strong>
+                <p>{{ item.text }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section class="section" id="practical">
+          <h2>Practical info</h2>
+          <ul class="grid-list">
+            {% for item in seminar.practical %}
+              <li class="item">
+                <strong>{{ item.label }}</strong>
+                <p>{{ item.value }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section class="section" id="organizers">
+          <h2>Organizers</h2>
+          <ul class="grid-list">
+            {% for person in seminar.organizers %}
+              <li class="person">
+                <strong>{{ person.name }}</strong>
+                <p>{{ person.affiliation }} · <a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+              </li>
+            {% endfor %}
+          </ul>
+          <p>To propose a talk, write to <a href="mailto:{{ seminar.meta.contact_email }}">{{ seminar.meta.contact_email }}</a>.</p>
+        </section>
+
+        <footer class="footer">
+          <span>&copy; {{ site.time | date: '%Y' }} CREST Statistics PhD Seminar.</span>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
