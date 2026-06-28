@@ -105,24 +105,6 @@ a:focus-visible {
   text-decoration: none;
 }
 
-.sidebar-cta {
-  background: var(--accent);
-  border-radius: 8px;
-  color: #fff;
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-top: 1.35rem;
-  padding: 0.65rem 0.8rem;
-  text-align: center;
-}
-
-.sidebar-cta:hover {
-  background: var(--accent-strong);
-  color: #fff;
-  text-decoration: none;
-}
-
 .content {
   margin: 0 auto;
   max-width: 930px;
@@ -446,11 +428,6 @@ td span {
   .nav a {
     border-left: 0;
     padding: 0;
-  }
-
-  .sidebar-cta {
-    display: inline-flex;
-    margin-top: 1rem;
   }
 
   .content {
