@@ -53,12 +53,6 @@ layout: null
           <div class="kicker">CREST · Statistics</div>
           <h1>{{ seminar.meta.title }}</h1>
           <p>{{ seminar.meta.subtitle }}</p>
-          <div class="hero-actions">
-            {% if seminar.links.proposal_form %}
-              <a class="button-link button-link-large" href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">Submit a talk proposal</a>
-            {% endif %}
-            <a class="ghost-link" href="#schedule">View schedule</a>
-          </div>
 
           <div class="notice">
             <strong>{{ seminar.meta.academic_year }} · {{ seminar.meta.status }}</strong>
@@ -128,9 +122,6 @@ layout: null
               <div class="empty-state">
                 <strong>Program in preparation</strong>
                 <p>Titles, speakers, rooms, and abstracts will be added as talks are confirmed.</p>
-                {% if seminar.links.proposal_form %}
-                  <a class="button-link" href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">Submit a talk proposal</a>
-                {% endif %}
               </div>
             {% endif %}
           {% endfor %}
@@ -139,7 +130,7 @@ layout: null
         <section class="section" id="propose">
           <div class="section-head">
             <h2>Propose a talk</h2>
-            <p>Work in progress, conference rehearsals, reading sessions, and methodological discussions are welcome.</p>
+            <p>Use the seminar to present ongoing work, discuss open questions, and receive feedback from other PhD students.</p>
           </div>
           <div class="callout">
             <div>
@@ -164,7 +155,7 @@ layout: null
         <section class="section" id="format">
           <div class="section-head">
             <h2>Format</h2>
-            <p>A flexible seminar for sharing research early, rehearsing talks, and discussing useful papers or methods.</p>
+            <p>A simple format for sharing research in progress, getting feedback, and encouraging collaborations between PhD students.</p>
           </div>
           <ul class="grid-list">
             {% for item in seminar.format %}
@@ -213,10 +204,7 @@ layout: null
             {% endfor %}
           </ul>
           <p class="section-note">
-            {% if seminar.links.proposal_form %}
-              To propose a talk, please use the <a href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">talk proposal form</a>.
-            {% endif %}
-            For other questions, contact one of the organizers.
+            For questions about the seminar, contact one of the organizers.
           </p>
         </section>
 

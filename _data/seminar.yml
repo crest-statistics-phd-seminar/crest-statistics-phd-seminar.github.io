@@ -1,6 +1,6 @@
 meta:
   title: CREST Statistics PhD Seminar
-  subtitle: A regular seminar for PhD students in statistics to present work in progress, prepare talks, and exchange feedback.
+  subtitle: A regular seminar for PhD students in statistics to present ongoing work, exchange feedback, and foster collaborations.
   academic_year: 2026-2027
   status: Program in preparation
   location: CREST, ENSAE Paris
@@ -38,7 +38,7 @@ submission_steps:
   - title: Submit a proposal
     text: Send a tentative title, a short abstract, and your preferred Wednesday availability.
   - title: Confirm a slot
-    text: The organizers coordinate the date, room, and format with the speaker.
+    text: The organizers coordinate the date, room, and format with you.
   - title: Share the announcement
     text: Once confirmed, the title and abstract are added to the seminar schedule.
 
@@ -47,14 +47,12 @@ schedule:
     sessions: []
 
 format:
-  - title: Work in progress
-    text: Present ongoing research, open questions, or a technical tool you would like to discuss.
-  - title: Conference rehearsal
-    text: Use the seminar as a friendly place to test a conference talk before travelling.
-  - title: Reading session
-    text: Share a paper, method, or problem that could be useful to other PhD students.
-  - title: Friendly feedback
-    text: Keep the discussion informal, constructive, and useful for the speaker.
+  - title: Ongoing work
+    text: Present research in progress, preliminary results, open questions, or technical difficulties.
+  - title: Feedback
+    text: Get constructive comments from other PhD students and researchers in a friendly setting.
+  - title: Collaboration
+    text: Share ideas early and make it easier to start discussions across statistics PhD students.
 
 practical:
   - label: Usual day

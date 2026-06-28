@@ -190,14 +190,6 @@ a:focus-visible {
   margin: 0;
 }
 
-.hero-actions {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.35rem;
-}
-
 .notice {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -384,30 +376,9 @@ td span {
   padding: 0.7rem 0.9rem;
 }
 
-.button-link-large {
-  padding: 0.8rem 1rem;
-}
-
 .button-link:hover {
   background: var(--accent-strong);
   color: #fff;
-  text-decoration: none;
-}
-
-.ghost-link {
-  align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--text);
-  display: inline-flex;
-  font-weight: 700;
-  line-height: 1.2;
-  padding: 0.78rem 0.95rem;
-}
-
-.ghost-link:hover {
-  border-color: var(--accent);
-  color: var(--accent);
   text-decoration: none;
 }
 
@@ -539,14 +510,12 @@ td span {
     grid-template-columns: 1fr;
   }
 
-  .hero-actions,
   .callout {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .button-link,
-  .ghost-link {
+  .button-link {
     justify-content: center;
     width: 100%;
   }
