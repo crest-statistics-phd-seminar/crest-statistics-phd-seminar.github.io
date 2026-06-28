@@ -341,6 +341,28 @@ td span {
   font-weight: 650;
 }
 
+.button-link {
+  align-items: center;
+  background: var(--accent);
+  border-radius: 8px;
+  color: #fff;
+  display: inline-flex;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.7rem 0.9rem;
+}
+
+.button-link:hover {
+  background: var(--accent-strong);
+  color: #fff;
+  text-decoration: none;
+}
+
+.section-note {
+  color: var(--muted);
+  margin: 0.95rem 0 0;
+}
+
 .footer {
   border-top: 1px solid var(--line);
   color: var(--muted);

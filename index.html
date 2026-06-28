@@ -108,7 +108,9 @@ layout: null
               <div class="empty-state">
                 <strong>Program in preparation</strong>
                 <p>Titles, speakers, rooms, and abstracts will be added as talks are confirmed.</p>
-                <a href="#organizers">Contact the organizers</a>
+                {% if seminar.links.proposal_form %}
+                  <a class="button-link" href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">Submit a talk proposal</a>
+                {% endif %}
               </div>
             {% endif %}
           {% endfor %}
@@ -165,7 +167,12 @@ layout: null
               </li>
             {% endfor %}
           </ul>
-          <p>To propose a talk, contact one of the organizers.</p>
+          <p class="section-note">
+            {% if seminar.links.proposal_form %}
+              To propose a talk, please use the <a href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">talk proposal form</a>.
+            {% endif %}
+            For other questions, contact one of the organizers.
+          </p>
         </section>
 
         <footer class="footer">
