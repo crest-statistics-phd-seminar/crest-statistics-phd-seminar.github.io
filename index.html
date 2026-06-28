@@ -141,15 +141,6 @@ layout: null
               <a class="button-link" href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">Open the form</a>
             {% endif %}
           </div>
-          <ol class="steps">
-            {% for step in seminar.submission_steps %}
-              <li>
-                <span>0{{ forloop.index }}</span>
-                <strong>{{ step.title }}</strong>
-                <p>{{ step.text }}</p>
-              </li>
-            {% endfor %}
-          </ol>
         </section>
 
         <section class="section" id="format">

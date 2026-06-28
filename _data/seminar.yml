@@ -32,15 +32,7 @@ announcements:
 
 submission:
   title: Proposals are open
-  text: The seminar is expected to take place on Wednesdays. Submit a tentative title, a short abstract, and any date constraints through the form.
-
-submission_steps:
-  - title: Submit a proposal
-    text: Send a tentative title, a short abstract, and your preferred Wednesday availability.
-  - title: Confirm a slot
-    text: The organizers coordinate the date, room, and format with you.
-  - title: Share the announcement
-    text: Once confirmed, the title and abstract are added to the seminar schedule.
+  text: Submit a tentative title, a short abstract, and your preferred Wednesday availability.
 
 schedule:
   - year: 2026-2027
