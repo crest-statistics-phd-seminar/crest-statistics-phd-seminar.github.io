@@ -37,15 +37,3 @@ submission:
 schedule:
   - year: 2026-2027
     sessions: []
-
-practical:
-  - label: Usual day
-    value: Wednesdays, depending on speaker availability and room constraints.
-  - label: Language
-    value: English or French, depending on the speaker and audience.
-  - label: Slides
-    value: Optional. Blackboard talks are welcome.
-  - label: Abstracts
-    value: A short abstract is enough for the announcement.
-  - label: Visitors
-    value: Visitors are welcome when the speaker is comfortable with it.

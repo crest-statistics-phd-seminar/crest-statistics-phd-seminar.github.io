@@ -31,7 +31,6 @@ layout: null
         <nav class="nav">
           <a href="#schedule">Schedule</a>
           <a href="#propose">Propose a talk</a>
-          <a href="#practical">Practical info</a>
           <a href="#organizers">Organizers</a>
         </nav>
         {% if seminar.links.proposal_form %}
@@ -140,20 +139,6 @@ layout: null
               <a class="button-link" href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">Open the form</a>
             {% endif %}
           </div>
-        </section>
-
-        <section class="section" id="practical">
-          <div class="section-head">
-            <h2>Practical info</h2>
-          </div>
-          <ul class="grid-list">
-            {% for item in seminar.practical %}
-              <li class="item">
-                <strong>{{ item.label }}</strong>
-                <p>{{ item.value }}</p>
-              </li>
-            {% endfor %}
-          </ul>
         </section>
 
         <section class="section" id="organizers">
