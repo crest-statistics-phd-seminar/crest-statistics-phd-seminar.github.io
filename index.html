@@ -31,7 +31,6 @@ layout: null
         <nav class="nav">
           <a href="#schedule">Schedule</a>
           <a href="#propose">Propose a talk</a>
-          <a href="#format">Format</a>
           <a href="#practical">Practical info</a>
           <a href="#organizers">Organizers</a>
         </nav>
@@ -141,21 +140,6 @@ layout: null
               <a class="button-link" href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">Open the form</a>
             {% endif %}
           </div>
-        </section>
-
-        <section class="section" id="format">
-          <div class="section-head">
-            <h2>Format</h2>
-            <p>A simple format for sharing research in progress, getting feedback, and encouraging collaborations between PhD students.</p>
-          </div>
-          <ul class="grid-list">
-            {% for item in seminar.format %}
-              <li class="item">
-                <strong>{{ item.title }}</strong>
-                <p>{{ item.text }}</p>
-              </li>
-            {% endfor %}
-          </ul>
         </section>
 
         <section class="section" id="practical">

@@ -38,14 +38,6 @@ schedule:
   - year: 2026-2027
     sessions: []
 
-format:
-  - title: Ongoing work
-    text: Present research in progress, preliminary results, open questions, or technical difficulties.
-  - title: Feedback
-    text: Get constructive comments from other PhD students and researchers in a friendly setting.
-  - title: Collaboration
-    text: Share ideas early and make it easier to start discussions across statistics PhD students.
-
 practical:
   - label: Usual day
     value: Wednesdays, depending on speaker availability and room constraints.
