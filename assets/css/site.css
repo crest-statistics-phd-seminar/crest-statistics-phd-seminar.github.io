@@ -276,6 +276,40 @@ a:focus-visible {
   min-height: 6rem;
 }
 
+.person-heading {
+  align-items: center;
+  display: flex;
+  gap: 0.45rem;
+}
+
+.person-website {
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 1.55rem;
+  justify-content: center;
+  width: 1.55rem;
+}
+
+.person-website:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.person-website svg {
+  fill: none;
+  height: 0.9rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 0.9rem;
+}
+
 .person-links {
   display: flex;
   flex-wrap: wrap;

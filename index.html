@@ -146,11 +146,19 @@ layout: null
           <ul class="grid-list organizer-list">
             {% for person in seminar.organizers %}
               <li class="person">
-                <strong>{{ person.name }}</strong>
-                <div class="person-links">
+                <div class="person-heading">
+                  <strong>{{ person.name }}</strong>
                   {% if person.url %}
-                    <a href="{{ person.url }}">Website</a>
+                    <a class="person-website" href="{{ person.url }}" aria-label="{{ person.name }} website" title="{{ person.name }} website">
+                      <svg aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      </svg>
+                    </a>
                   {% endif %}
+                </div>
+                <div class="person-links">
                   {% if person.email %}
                     <a href="mailto:{{ person.email }}">{{ person.email }}</a>
                   {% endif %}
