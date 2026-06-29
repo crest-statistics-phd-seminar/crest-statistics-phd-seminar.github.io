@@ -2,9 +2,9 @@ meta:
   title: CREST Statistics PhD Seminar
   subtitle: A regular seminar for PhD students in statistics to present ongoing work, exchange feedback, and foster collaborations.
   academic_year: 2026-2027
-  status: Program in preparation
+  status: First session announced
   location: CREST, ENSAE Paris
-  day: Wednesdays
+  day: Thursdays
   format: 45 min talk + 15 min discussion
   audience: PhD students, postdocs, and researchers in statistics and related fields
   contact_name: Yassine Boukhateb
@@ -24,13 +24,17 @@ organizers:
     url: https://margueritetalamon.github.io
 
 announcements:
-  - The 2026-2027 program is being prepared.
-  - Titles and abstracts will be added as talks are confirmed.
+  - The first 2026-2027 session is scheduled for Thursday, October 1, 2026.
+  - Additional titles and abstracts will be added as talks are confirmed.
 
 submission:
   title: Proposals are open
-  text: Submit a tentative title, a short abstract, and your preferred Wednesday availability.
+  text: Submit a tentative title, a short abstract, and your preferred Thursday availability.
 
 schedule:
   - year: 2026-2027
-    sessions: []
+    sessions:
+      - date: Thursday, October 1, 2026
+        speaker: Yassine Boukhateb
+        title: TBA
+        room: TBA
