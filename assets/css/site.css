@@ -1,14 +1,11 @@
 :root {
   --bg: #ffffff;
-  --surface: #f8fafc;
-  --surface-strong: #eef2f7;
+  --surface: #f7f8fa;
   --text: #20242c;
   --muted: #667085;
   --line: #d9dee7;
   --accent: #8d2839;
   --accent-strong: #6f1f2d;
-  --teal: #0f766e;
-  --shadow: 0 14px 36px rgba(32, 36, 44, 0.06);
 }
 
 * {
@@ -27,6 +24,10 @@ body {
     sans-serif;
   line-height: 1.6;
   margin: 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
@@ -107,7 +108,7 @@ a:focus-visible {
 
 .content {
   margin: 0 auto;
-  max-width: 930px;
+  max-width: 1000px;
   padding: 3.2rem 2.2rem 4rem;
   width: 100%;
 }
@@ -122,17 +123,14 @@ a:focus-visible {
 
 .institution-logos a {
   align-items: center;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
   display: flex;
-  height: 76px;
+  height: 64px;
   justify-content: center;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0;
 }
 
 .institution-logos a:hover {
-  border-color: var(--accent);
+  opacity: 0.8;
   text-decoration: none;
 }
 
@@ -158,7 +156,7 @@ a:focus-visible {
 }
 
 .hero h1 {
-  font-size: clamp(2.05rem, 4vw, 3.3rem);
+  font-size: 2.8rem;
   letter-spacing: 0;
   line-height: 1.08;
   margin: 0 0 0.85rem;
@@ -173,41 +171,52 @@ a:focus-visible {
 }
 
 .notice {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: #fcf6f7;
   border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
   margin: 1.45rem 0 1.45rem;
   padding: 1rem 1.1rem;
 }
 
+.notice-label {
+  color: var(--accent);
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 650;
+  margin-bottom: 0.4rem;
+}
+
 .notice strong {
   display: block;
+  font-size: 1.25rem;
   margin-bottom: 0.2rem;
 }
 
 .notice p {
   color: var(--muted);
+  font-size: 0.95rem;
   margin: 0;
 }
 
 .facts {
   display: grid;
   gap: 0.8rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 1.6rem 0 2.2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.5rem 0 1.1rem;
 }
 
-.fact,
-.item,
 .person {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0.9rem 1rem;
 }
 
-.fact span {
+.fact {
+  border-top: 1px solid var(--line);
+  min-width: 0;
+  padding-top: 0.65rem;
+}
+
+.fact dt {
   color: var(--muted);
   display: block;
   font-size: 0.76rem;
@@ -217,8 +226,24 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
-.fact strong,
-.item strong,
+.fact dd {
+  font-weight: 650;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.fact dd span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.94rem;
+  font-weight: 400;
+}
+
+.session-notes p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
 .person strong {
   display: block;
   overflow-wrap: anywhere;
@@ -261,11 +286,6 @@ a:focus-visible {
   padding: 0;
 }
 
-.item p {
-  color: var(--muted);
-  margin: 0.2rem 0 0;
-}
-
 .organizer-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -287,11 +307,11 @@ a:focus-visible {
   color: var(--muted);
   display: inline-flex;
   flex: 0 0 auto;
-  height: 1rem;
+  height: 24px;
   justify-content: center;
   line-height: 1;
   overflow: hidden;
-  width: 1rem;
+  width: 24px;
 }
 
 .person-website:hover {
@@ -329,7 +349,6 @@ a:focus-visible {
 
 table {
   border-collapse: collapse;
-  min-width: 680px;
   width: 100%;
 }
 
@@ -342,6 +361,7 @@ td {
 }
 
 th {
+  background: var(--surface);
   color: var(--muted);
   font-size: 0.76rem;
   letter-spacing: 0;
@@ -355,6 +375,12 @@ tr:last-child td {
 
 td span {
   color: var(--muted);
+}
+
+.session-time {
+  display: block;
+  font-size: 0.88rem;
+  margin-top: 0.2rem;
 }
 
 .empty {
@@ -403,12 +429,16 @@ td span {
 .callout {
   align-items: center;
   background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  border-left: 3px solid var(--line);
   display: flex;
   gap: 1rem;
   justify-content: space-between;
   padding: 1rem 1.1rem;
+}
+
+.proposal-invitation {
+  color: var(--muted);
+  margin: 0 0 1rem;
 }
 
 .callout strong {
@@ -470,15 +500,19 @@ td span {
     padding: 2rem 1.1rem 3rem;
   }
 
+  .hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.15;
+  }
+
   .institution-logos {
     gap: 0.65rem;
     margin-bottom: 1.25rem;
   }
 
   .institution-logos a {
-    flex: 1 1 9rem;
-    height: 68px;
-    padding: 0.65rem 0.8rem;
+    height: 52px;
+    padding: 0.4rem 0;
   }
 
   .institution-logos img {
@@ -488,6 +522,58 @@ td span {
 
   .facts {
     grid-template-columns: 1fr;
+  }
+
+  .table-wrap {
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  table,
+  tbody,
+  tr {
+    display: block;
+  }
+
+  thead {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+    padding: 0.5rem 0;
+  }
+
+  tbody tr + tr {
+    border-top: 0;
+  }
+
+  td {
+    border: 0;
+    display: grid;
+    gap: 0 0.8rem;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    overflow-wrap: anywhere;
+    padding: 0.4rem 0;
+  }
+
+  td::before {
+    color: var(--muted);
+    content: attr(data-label);
+    font-size: 0.85rem;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  td > * {
+    grid-column: 2;
   }
 
   .callout {
@@ -510,8 +596,13 @@ td span {
 }
 
 @media (min-width: 761px) and (max-width: 1050px) {
-  .facts,
   .organizer-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

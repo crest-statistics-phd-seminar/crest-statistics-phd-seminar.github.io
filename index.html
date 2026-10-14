@@ -2,6 +2,7 @@
 layout: null
 ---
 {% assign seminar = site.data.seminar %}
+{% assign first_session = seminar.schedule.first.sessions.first %}
 <!doctype html>
 <html lang="{{ site.lang | default: 'en' }}">
   <head>
@@ -25,7 +26,7 @@ layout: null
           <img src="{{ '/assets/img/seminar-mark.svg' | relative_url }}" alt="">
           <span>
             <strong>CREST Statistics</strong>
-            <span>PhD Seminar</span>
+            <span>Junior Seminar</span>
           </span>
         </a>
         <nav class="nav">
@@ -50,34 +51,35 @@ layout: null
           <p>{{ seminar.meta.subtitle }}</p>
 
           <div class="notice">
-            <strong>{{ seminar.meta.academic_year }} · {{ seminar.meta.status }}</strong>
-            <p>{{ seminar.announcements | first }}</p>
+            <span class="notice-label">{{ seminar.meta.status }} · {{ seminar.meta.academic_year }}</span>
+            <strong><time datetime="{{ first_session.date }}">{{ first_session.date | date: '%A, %B %-d, %Y' }}</time></strong>
+            <p>{{ seminar.meta.time }} · Speaker and title to be announced · Room {{ first_session.room }}</p>
           </div>
 
-          <div class="facts">
+          <dl class="facts">
             <div class="fact">
-              <span>Location</span>
-              <strong>{{ seminar.meta.location }}</strong>
+              <dt>When</dt>
+              <dd>{{ seminar.meta.day }}<span>{{ seminar.meta.time }}</span></dd>
             </div>
             <div class="fact">
-              <span>Usual day</span>
-              <strong>{{ seminar.meta.day }}</strong>
+              <dt>Frequency</dt>
+              <dd>{{ seminar.meta.frequency }}</dd>
             </div>
             <div class="fact">
-              <span>Format</span>
-              <strong>{{ seminar.meta.format }}</strong>
+              <dt>Where</dt>
+              <dd>{{ seminar.meta.location }}</dd>
             </div>
-            <div class="fact">
-              <span>Audience</span>
-              <strong>{{ seminar.meta.audience }}</strong>
-            </div>
+          </dl>
+          <div class="session-notes">
+            <p>{{ seminar.meta.scheduling_note }}</p>
+            <p>{{ seminar.meta.lunch_note }}</p>
           </div>
         </section>
 
         <section class="section" id="schedule">
           <div class="section-head">
             <h2>Schedule</h2>
-            <p>The program will be published here as sessions are confirmed.</p>
+            <p>{{ seminar.meta.format }} Two shorter talks can share a session.</p>
           </div>
           {% for block in seminar.schedule %}
             <h3>{{ block.year }}</h3>
@@ -86,18 +88,18 @@ layout: null
                 <table>
                   <thead>
                     <tr>
-                      <th>Date</th>
-                      <th>Speaker</th>
-                      <th>Title</th>
-                      <th>Room</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Speaker</th>
+                      <th scope="col">Talk</th>
+                      <th scope="col">Room</th>
                     </tr>
                   </thead>
                   <tbody>
                     {% for session in block.sessions %}
                       <tr>
-                        <td>{{ session.date }}</td>
-                        <td>{{ session.speaker }}</td>
-                        <td>
+                        <td data-label="Date"><time datetime="{{ session.date }}">{{ session.date | date: '%a, %b %-d, %Y' }}</time><span class="session-time">{{ seminar.meta.time }}</span></td>
+                        <td data-label="Speaker">{{ session.speaker }}</td>
+                        <td data-label="Talk">
                           {% if session.url %}
                             <a href="{{ session.url }}">{{ session.title }}</a>
                           {% else %}
@@ -107,7 +109,7 @@ layout: null
                             <br><span>{{ session.abstract }}</span>
                           {% endif %}
                         </td>
-                        <td>{{ session.room }}</td>
+                        <td data-label="Room">{{ session.room }}</td>
                       </tr>
                     {% endfor %}
                   </tbody>
@@ -127,15 +129,17 @@ layout: null
             <h2>Propose a talk</h2>
             <p>Use it to present ongoing work and discuss open questions.</p>
           </div>
+          <p class="proposal-invitation">{{ seminar.submission.invitation }}</p>
           <div class="callout">
             <div>
               <strong>{{ seminar.submission.title }}</strong>
               <p>{{ seminar.submission.text }}</p>
             </div>
             {% if seminar.links.proposal_form %}
-              <a class="button-link" href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">Open the form</a>
+              <a class="button-link" href="{{ seminar.links.proposal_form }}" target="_blank" rel="noopener">Submit a proposal</a>
             {% endif %}
           </div>
+          <p class="section-note">{{ seminar.meta.audience }}</p>
         </section>
 
         <section class="section" id="organizers">
@@ -172,7 +176,7 @@ layout: null
         </section>
 
         <footer class="footer">
-          <span>&copy; {{ site.time | date: '%Y' }} CREST Statistics PhD Seminar.</span>
+          <span>&copy; {{ site.time | date: '%Y' }} {{ seminar.meta.title }}.</span>
         </footer>
       </main>
     </div>

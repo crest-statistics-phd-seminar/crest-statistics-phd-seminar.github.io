@@ -1,6 +1,6 @@
-# CREST Statistics PhD Seminar
+# CREST Statistics Junior Seminar
 
-Website for the CREST Statistics PhD Seminar.
+Website for the CREST Statistics Junior Seminar.
 
 ## Editing the program
 
@@ -12,7 +12,7 @@ To add a talk, add an entry under the relevant academic year:
 schedule:
   - year: 2026-2027
     sessions:
-      - date: "2026-10-15"
+      - date: "2026-11-09"
         speaker: "Firstname Lastname"
         title: "Talk title"
         room: "ENSAE, room TBA"

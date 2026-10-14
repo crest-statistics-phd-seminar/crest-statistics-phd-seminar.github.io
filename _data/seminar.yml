@@ -1,12 +1,16 @@
 meta:
-  title: CREST Statistics PhD Seminar
-  subtitle: A regular seminar for PhD students in statistics to present ongoing work, exchange feedback, and foster collaborations.
+  title: CREST Statistics Junior Seminar
+  subtitle: A seminar for PhD students to share current work, discuss open questions, and connect across research topics.
   academic_year: 2026-2027
-  status: First session announced
+  status: First session
   location: CREST, ENSAE Paris
-  day: Thursdays
-  format: 45 min talk + 15 min discussion
-  audience: PhD students, postdocs, and researchers in statistics and related fields
+  day: Mondays
+  time: "12:30-13:30"
+  frequency: Twice a month
+  format: Talks last 45 minutes to an hour, with shorter presentations also welcome.
+  scheduling_note: We give priority to Mondays with a lab seminar, so our session takes place just before it.
+  lunch_note: Sandwiches will be provided by the lab.
+  audience: Everyone is welcome to attend.
   contact_name: Yassine Boukhateb
   contact_email: yassine.boukhateb@ensae.fr
 
@@ -23,18 +27,15 @@ organizers:
     email: marguerite.petittalamon@ensae.fr
     url: https://margueritetalamon.github.io
 
-announcements:
-  - The first 2026-2027 session is scheduled for Thursday, October 1, 2026.
-  - Additional titles and abstracts will be added as talks are confirmed.
-
 submission:
   title: Proposals are open
-  text: Submit a tentative title, a short abstract, and your preferred Thursday availability.
+  text: Submit a tentative title, a short abstract, and your preferred Monday availability. We will contact you by email to confirm the details.
+  invitation: All PhD students are welcome to propose a talk, from first-year students introducing their PhD topic to more advanced students sharing recent results. Feel free to invite PhD students from other universities or labs.
 
 schedule:
   - year: 2026-2027
     sessions:
-      - date: Thursday, October 1, 2026
-        speaker: Yassine Boukhateb
-        title: About Barycenters in Non-Linear Spaces
+      - date: "2026-11-09"
+        speaker: To be announced
+        title: To be announced
         room: TBA
