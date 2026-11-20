@@ -2,7 +2,7 @@ meta:
   title: CREST Statistics Junior Seminar
   subtitle: A seminar for PhD students to share current work, discuss open questions, and connect across research topics.
   academic_year: 2026-2027
-  status: First session
+  status: Next session
   location: CREST, ENSAE Paris
   day: Mondays
   time: "12:30-13:30"
@@ -35,7 +35,24 @@ submission:
 schedule:
   - year: 2026-2027
     sessions:
-      - date: "2026-11-09"
-        speaker: To be announced
+      - date: "2026-11-23"
+        speaker: Helen Vardanyan
+        title: "Assessing the quality of denoising diffusion models in Wasserstein distance: noisy score and optimal bounds"
+        abstract: >-
+          Generative modeling aims to produce new random examples from an unknown target
+          distribution, given access to a finite collection of examples. Among the leading
+          approaches, denoising diffusion probabilistic models (DDPMs) construct such
+          examples by mapping a Brownian motion via a diffusion process driven by an
+          estimated score function. In this work, we first provide empirical evidence that
+          DDPMs are robust to constant-variance noise in the score evaluations. We then
+          establish finite-sample guarantees in Wasserstein-2 distance that exhibit two key
+          features: (i) they characterize and quantify the robustness of DDPMs to noisy
+          score estimates, and (ii) they achieve faster convergence rates than previously
+          known results. Furthermore, we observe that the obtained rates match those known
+          in the Gaussian case, implying their optimality.
+        room: "3049"
+      - date: "2026-12-07"
+        speaker: Paul Guillot
         title: To be announced
+        abstract: To be announced
         room: TBA

@@ -2,7 +2,7 @@
 layout: null
 ---
 {% assign seminar = site.data.seminar %}
-{% assign first_session = seminar.schedule.first.sessions.first %}
+{% assign next_session = seminar.schedule.first.sessions.first %}
 <!doctype html>
 <html lang="{{ site.lang | default: 'en' }}">
   <head>
@@ -50,11 +50,14 @@ layout: null
           <h1>{{ seminar.meta.title }}</h1>
           <p>{{ seminar.meta.subtitle }}</p>
 
+          {% if next_session %}
           <div class="notice">
             <span class="notice-label">{{ seminar.meta.status }} · {{ seminar.meta.academic_year }}</span>
-            <strong><time datetime="{{ first_session.date }}">{{ first_session.date | date: '%A, %B %-d, %Y' }}</time></strong>
-            <p>{{ seminar.meta.time }} · Speaker and title to be announced · Room {{ first_session.room }}</p>
+            <strong><time datetime="{{ next_session.date }}">{{ next_session.date | date: '%A, %B %-d, %Y' }}</time></strong>
+            <p>{{ seminar.meta.time }} · {{ next_session.speaker | escape }} · Room {{ next_session.room }}</p>
+            <p class="notice-talk">{{ next_session.title | escape }}</p>
           </div>
+          {% endif %}
 
           <dl class="facts">
             <div class="fact">
@@ -97,20 +100,30 @@ layout: null
                   <tbody>
                     {% for session in block.sessions %}
                       <tr>
-                        <td data-label="Date"><time datetime="{{ session.date }}">{{ session.date | date: '%a, %b %-d, %Y' }}</time><span class="session-time">{{ seminar.meta.time }}</span></td>
-                        <td data-label="Speaker">{{ session.speaker }}</td>
+                        <td data-label="Date">
+                          <time datetime="{{ session.date }}">{{ session.date | date: '%a, %b %-d, %Y' }}</time>
+                          <span class="session-time">{{ seminar.meta.time }}</span>
+                        </td>
+                        <td data-label="Speaker">{{ session.speaker | escape }}</td>
                         <td data-label="Talk">
                           {% if session.url %}
-                            <a href="{{ session.url }}">{{ session.title }}</a>
+                            <a href="{{ session.url }}">{{ session.title | escape }}</a>
                           {% else %}
-                            {{ session.title }}
-                          {% endif %}
-                          {% if session.abstract %}
-                            <br><span>{{ session.abstract }}</span>
+                            {{ session.title | escape }}
                           {% endif %}
                         </td>
                         <td data-label="Room">{{ session.room }}</td>
                       </tr>
+                      {% if session.abstract %}
+                        <tr class="session-abstract-row">
+                          <td class="session-abstract-cell" colspan="4">
+                            <details class="session-abstract">
+                              <summary>Abstract</summary>
+                              <p>{{ session.abstract | escape }}</p>
+                            </details>
+                          </td>
+                        </tr>
+                      {% endif %}
                     {% endfor %}
                   </tbody>
                 </table>
