@@ -1,0 +1,41 @@
+<div class="table-wrap">
+  <table aria-label="{{ include.label }} {{ include.year }}">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Speaker</th>
+        <th scope="col">Talk</th>
+        <th scope="col">Room</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for session in include.sessions %}
+        <tr>
+          <td data-label="Date">
+            <time datetime="{{ session.date }}">{{ session.date | date: '%a, %b %-d, %Y' }}</time>
+            <span class="session-time">{{ site.data.seminar.meta.time }}</span>
+          </td>
+          <td data-label="Speaker">{{ session.speaker | escape }}</td>
+          <td data-label="Talk">
+            {% if session.url %}
+              <a href="{{ session.url }}">{{ session.title | escape }}</a>
+            {% else %}
+              {{ session.title | escape }}
+            {% endif %}
+          </td>
+          <td data-label="Room">{{ session.room }}</td>
+        </tr>
+        {% if session.abstract %}
+          <tr class="session-abstract-row">
+            <td class="session-abstract-cell" colspan="4">
+              <details class="session-abstract">
+                <summary>Abstract</summary>
+                <p>{{ session.abstract | escape }}</p>
+              </details>
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

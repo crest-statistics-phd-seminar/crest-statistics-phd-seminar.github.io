@@ -284,6 +284,20 @@ summary:focus-visible {
   margin: 1rem 0 0.45rem;
 }
 
+.schedule-group {
+  margin-top: 1.1rem;
+}
+
+.schedule-group h4 {
+  font-size: 1rem;
+  font-weight: 650;
+  margin: 0 0 0.5rem;
+}
+
+.schedule-group + .schedule-group {
+  margin-top: 1.5rem;
+}
+
 .grid-list {
   display: grid;
   gap: 0.8rem;

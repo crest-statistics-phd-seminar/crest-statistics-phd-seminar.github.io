@@ -2,7 +2,13 @@
 layout: null
 ---
 {% assign seminar = site.data.seminar %}
-{% assign next_session = seminar.schedule.first.sessions.first %}
+{% assign today = site.time | date: '%Y-%m-%d' %}
+{% assign all_sessions = '' | split: ',' %}
+{% for block in seminar.schedule %}
+  {% assign all_sessions = all_sessions | concat: block.sessions %}
+{% endfor %}
+{% assign upcoming_sessions = all_sessions | where_exp: 'session', 'session.date >= today' | sort: 'date' %}
+{% assign next_session = upcoming_sessions | first %}
 <!doctype html>
 <html lang="{{ site.lang | default: 'en' }}">
   <head>
@@ -85,49 +91,22 @@ layout: null
             <p>{{ seminar.meta.format }} Two shorter talks can share a session.</p>
           </div>
           {% for block in seminar.schedule %}
+            {% assign upcoming_sessions = block.sessions | where_exp: 'session', 'session.date >= today' | sort: 'date' %}
+            {% assign past_sessions = block.sessions | where_exp: 'session', 'session.date < today' | sort: 'date' | reverse %}
             <h3>{{ block.year }}</h3>
             {% if block.sessions and block.sessions.size > 0 %}
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th scope="col">Date</th>
-                      <th scope="col">Speaker</th>
-                      <th scope="col">Talk</th>
-                      <th scope="col">Room</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for session in block.sessions %}
-                      <tr>
-                        <td data-label="Date">
-                          <time datetime="{{ session.date }}">{{ session.date | date: '%a, %b %-d, %Y' }}</time>
-                          <span class="session-time">{{ seminar.meta.time }}</span>
-                        </td>
-                        <td data-label="Speaker">{{ session.speaker | escape }}</td>
-                        <td data-label="Talk">
-                          {% if session.url %}
-                            <a href="{{ session.url }}">{{ session.title | escape }}</a>
-                          {% else %}
-                            {{ session.title | escape }}
-                          {% endif %}
-                        </td>
-                        <td data-label="Room">{{ session.room }}</td>
-                      </tr>
-                      {% if session.abstract %}
-                        <tr class="session-abstract-row">
-                          <td class="session-abstract-cell" colspan="4">
-                            <details class="session-abstract">
-                              <summary>Abstract</summary>
-                              <p>{{ session.abstract | escape }}</p>
-                            </details>
-                          </td>
-                        </tr>
-                      {% endif %}
-                    {% endfor %}
-                  </tbody>
-                </table>
-              </div>
+              {% if upcoming_sessions.size > 0 %}
+                <div class="schedule-group" data-period="upcoming">
+                  <h4>Upcoming sessions</h4>
+                  {% include session-table.html sessions=upcoming_sessions label='Upcoming sessions' year=block.year %}
+                </div>
+              {% endif %}
+              {% if past_sessions.size > 0 %}
+                <div class="schedule-group" data-period="past">
+                  <h4>Past sessions</h4>
+                  {% include session-table.html sessions=past_sessions label='Past sessions' year=block.year %}
+                </div>
+              {% endif %}
             {% else %}
               <div class="empty-state">
                 <strong>Program in preparation</strong>

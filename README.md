@@ -6,6 +6,10 @@ Website for the CREST Statistics Junior Seminar.
 
 Talks, organizers, and practical information are stored in `_data/seminar.yml`.
 
+Use ISO dates (`YYYY-MM-DD`) for sessions. The next session and the upcoming/past
+lists are calculated when Jekyll builds the site, using the Europe/Paris timezone.
+Rebuild the site after a session to refresh these lists.
+
 To add a talk, add an entry under the relevant academic year:
 
 ```yml
