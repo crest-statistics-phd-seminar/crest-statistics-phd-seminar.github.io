@@ -53,6 +53,27 @@ schedule:
         room: "3049"
       - date: "2026-12-07"
         speaker: Paul Guillot
-        title: To be announced
-        abstract: To be announced
-        room: TBA
+        title: Online estimation of the geometric median with missing coordinates
+        abstract: >-
+          We consider the online estimation of the geometric median of a random vector in
+          ℝᵈ when observations are subject to missing coordinates. Extending complete-data
+          stochastic approximation strategies to the incomplete-data setting is non-trivial:
+          imputation-based schemes generally introduce estimation bias, while orthogonal
+          projection onto the observed coordinates can compromise the identifiability,
+          uniqueness, twice differentiability and local strong convexity of the underlying
+          objective function. To address these issues, we formulate a stochastic gradient
+          framework that operates directly on the observed entries without prior imputation,
+          accommodating general missing-data mechanisms such as missing completely at random
+          (MCAR) and missing at random (MAR). We establish sufficient conditions on the
+          observation pattern to guarantee the existence and uniqueness of the target
+          parameter. Under these assumptions, we prove the almost sure consistency of both
+          the recursive estimator and its Polyak–Ruppert averaged counterpart. Furthermore,
+          we establish higher-order moment bounds to control nonlinear remainder terms,
+          derive explicit non-asymptotic L² convergence rates, and prove the asymptotic
+          normality of the averaged estimator. These results hold without assuming twice
+          differentiability or local strong convexity of the objective function. We also
+          provide an explicit characterization of its asymptotic covariance matrix, highlighting how the
+          missingness structure governs statistical efficiency. Finally, we illustrate the
+          performance and robustness of the proposed estimators through simulation studies
+          and an application to real data.
+        room: "3049 (to be confirmed)"
